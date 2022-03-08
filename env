@@ -14,7 +14,7 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+# CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
@@ -31,25 +31,37 @@
 # APP_SESSION_REGENERATE_DESTROY = false
 # APP_CSP_ENABLED = false
 
-# app.CSPEnabled = false
-
 #--------------------------------------------------------------------
 # DATABASE
 #--------------------------------------------------------------------
 
-# DATABASE_HOSTNAME = localhost
+# Postgres Main Database
+# DATABASE_HOSTNAME = postgres
 # DATABASE_NAME = ci4
-# DATABASE_USERNAME = root
-# DATABASE_PASSWORD = root
-# DATABASE_DRIVER = MySQLi
-# DATABASE_PORT = 3306
-# DATABASE_PREFIX =
+ # DATABASE_SCHEMA =
+# DATABASE_USERNAME = larry
+# DATABASE_PASSWORD = larry
+# DATABASE_DRIVER = Postgre
+# DATABASE_PORT = 5432
+ # DATABASE_PREFIX =
 
-# TEST_DATABASE_HOSTNAME = localhost
-# TEST_DATABASE_NAME = ci4
-# TEST_DATABASE_USERNAME = root
-# TEST_DATABASE_PASSWORD = root
-# TEST_DATABASE_DRIVER = MySQLi
+# MySQL Legacy Database
+#  LEGACY_DATABASE_HOSTNAME = mysql
+#  LEGACY_DATABASE_NAME = ci4
+#  LEGACY_DATABASE_ROOT_PASSWORD = root
+#  LEGACY_DATABASE_USERNAME = larry
+#  LEGACY_DATABASE_PASSWORD = larry
+#  LEGACY_DATABASE_DRIVER = MySQLi
+#  LEGACY_DATABASE_PORT = 3306
+
+# Postgres Test Database
+# TEST_DATABASE_HOSTNAME = testdb
+# TEST_DATABASE_NAME = ci4_test
+ # TEST_DATABASE_SCHEMA =
+# TEST_DATABASE_USERNAME = larry
+# TEST_DATABASE_PASSWORD = larry
+# TEST_DATABASE_DRIVER = Postgre
+# TEST_DATABASE_PORT = 5432
 # TEST_DATABASE_PREFIX =
 
 #--------------------------------------------------------------------

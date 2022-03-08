@@ -8,8 +8,10 @@ RUN apt-get -yqq update \
     && apt-get -yqq install --no-install-recommends zip unzip \
         git \
         libicu-dev \
+        libpq-dev \
     && docker-php-ext-configure intl \
-    && docker-php-ext-install mysqli  pdo_mysql intl \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install mysqli pdo pdo_mysql pgsql pdo_pgsql intl \
     && pecl install xdebug redis \
     && docker-php-ext-enable xdebug redis \
     && a2enmod rewrite

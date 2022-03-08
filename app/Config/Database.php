@@ -36,6 +36,7 @@ class Database extends Config
         'username' => '',
         'password' => '',
         'database' => '',
+        'schema' => '',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -62,6 +63,7 @@ class Database extends Config
         'username' => '',
         'password' => '',
         'database' => ':memory:',
+        'schema' => '',
         'DBDriver' => 'SQLite3',
         'DBPrefix' => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
         'pConnect' => false,
@@ -100,6 +102,9 @@ class Database extends Config
         if (getenv('DATABASE_PORT')) {
             $this->default['port'] = getenv('DATABASE_PORT');
         }
+        if (getenv('DATABASE_SCHEMA')) {
+            $this->default['schema'] = getenv('DATABASE_SCHEMA');
+        }
 
         //Test Database
         if (getenv('TEST_DATABASE_HOSTNAME')) {
@@ -119,6 +124,9 @@ class Database extends Config
         }
         if (getenv('TEST_DATABASE_PREFIX')) {
             $this->tests['DBPrefix'] = getenv('TEST_DATABASE_PREFIX');
+        }
+        if (getenv('TEST_DATABASE_SCHEMA')) {
+            $this->default['schema'] = getenv('TEST_DATABASE_SCHEMA');
         }
 
         parent::__construct();
