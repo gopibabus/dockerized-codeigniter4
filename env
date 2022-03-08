@@ -1,0 +1,134 @@
+#--------------------------------------------------------------------
+# Example Environment Configuration file
+#
+# This file can be used as a starting point for your own
+# custom .env files, and contains most of the possible settings
+# available in a default install.
+#
+# By default, all of the settings are commented out. If you want
+# to override the setting, you must un-comment it by removing the '#'
+# at the beginning of the line.
+#--------------------------------------------------------------------
+
+#--------------------------------------------------------------------
+# ENVIRONMENT
+#--------------------------------------------------------------------
+
+# CI_ENVIRONMENT = production
+
+#--------------------------------------------------------------------
+# APP
+#--------------------------------------------------------------------
+
+# APP_BASE_URL = 'http://localhost'
+# APP_FORCE_GLOBAL_SECURE_REQ = false
+# APP_SESSION_DRIVER = 'CodeIgniter\Session\Handlers\FileHandler'
+# APP_SESSION_COOKIE_NAME = 'ci_session'
+# APP_SESSION_EXPIRATION = 7200
+# APP_SESSION_SAVE_PATH = null
+# APP_SESSION_MATH_IP = false
+# APP_SESSION_TIME_TO_UPDATE = 300
+# APP_SESSION_REGENERATE_DESTROY = false
+# APP_CSP_ENABLED = false
+
+# app.CSPEnabled = false
+
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+
+# DATABASE_HOSTNAME = localhost
+# DATABASE_NAME = ci4
+# DATABASE_USERNAME = root
+# DATABASE_PASSWORD = root
+# DATABASE_DRIVER = MySQLi
+# DATABASE_PORT = 3306
+# DATABASE_PREFIX =
+
+# TEST_DATABASE_HOSTNAME = localhost
+# TEST_DATABASE_NAME = ci4
+# TEST_DATABASE_USERNAME = root
+# TEST_DATABASE_PASSWORD = root
+# TEST_DATABASE_DRIVER = MySQLi
+# TEST_DATABASE_PREFIX =
+
+#--------------------------------------------------------------------
+# CONTENT SECURITY POLICY (CSP)
+#--------------------------------------------------------------------
+
+# CSP_REPORT_ONLY = false
+# CSP_DEFAULT_SRC = 'none'
+# CSP_SCRIPT_SRC = 'self'
+# CSP_STYLE_SRC = 'self'
+# CSP_IMAGE_SRC = 'self'
+# CSP_BASE_URI = null
+# CSP_CHILD_SRC = null
+# CSP_CONNECT_SRC = 'self'
+# CSP_FONT_SRC = null
+# CSP_FORM_ACTION = null
+# CSP_FRAME_ANCESTORS = null
+# CSP_FRAME_SRC = null
+# CSP_MEDIA_SRC = null
+# CSP_OBJECT_SRC = null
+# CSP_PLUGIN_TYPES = null
+# CSP_REPORT_URI = null
+# CSP_SANDBOX = false
+# CSP_UPGRADE_INSECURE_REQUESTS = false
+
+#--------------------------------------------------------------------
+# COOKIE
+#--------------------------------------------------------------------
+
+# COOKIE_PREFIX = ''
+# COOKIE_EXPIRES = 0
+# COOKIE_PATH = '/'
+# COOKIE_DOMAIN = ''
+# COOKIE_SECURE = false
+# COOKIE_HTTP_ONLY = false
+# COOKIE_SAME_SITE = 'Lax'
+# COOKIE_RAW = false
+
+#--------------------------------------------------------------------
+# ENCRYPTION
+#--------------------------------------------------------------------
+
+# ENCRYPT_KEY =
+# ENCRYPT_DRIVER = OpenSSL
+# ENCRYPT_BLOCK_SIZE = 16
+# ENCRYPT_DIGEST = SHA512
+
+#--------------------------------------------------------------------
+# HONEYPOT
+#--------------------------------------------------------------------
+
+# HONEYPOT_HIDDEN = 'true'
+# HONEYPOT_LABEL = 'Fill This Field'
+# HONEYPOT_NAME= 'honeypot'
+# HONEYPOT_TEMPLATE = '<label>{label}</label><input type="text" name="{name}" value=""/>'
+# HONEYPOT_CONTAINER = '<div style="display:none">{template}</div>'
+
+#--------------------------------------------------------------------
+# SECURITY
+#--------------------------------------------------------------------
+
+# SECURITY_CSRF_PROTECTION = 'cookie'
+# SECURITY_TOKEN_RANDOMIZE = false
+# SECURITY_TOKEN_NAME = 'csrf_token_name'
+# SECURITY_HEADER_NAME = 'X-CSRF-TOKEN'
+# SECURITY_COOKIE_NAME = 'csrf_cookie_name'
+# SECURITY_EXPIRES = 7200
+# SECURITY_REGENERATE = true
+# SECURITY_REDIRECT = true
+# SECURITY_SAME_SITE = 'Lax'
+
+#--------------------------------------------------------------------
+# LOGGER
+#--------------------------------------------------------------------
+
+# LOGGER_THRESHOLD = 4
+
+#--------------------------------------------------------------------
+# CURLRequest
+#--------------------------------------------------------------------
+
+# CURL_REQ_SHARE_OPTIONS = true
