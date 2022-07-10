@@ -1,26 +1,17 @@
 #--------------------------------------------------------------------
-# Example Environment Configuration file
-#
-# This file can be used as a starting point for your own
-# custom .env files, and contains most of the possible settings
-# available in a default install.
-#
-# By default, all of the settings are commented out. If you want
-# to override the setting, you must un-comment it by removing the '#'
-# at the beginning of the line.
-#--------------------------------------------------------------------
-
-#--------------------------------------------------------------------
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = development
+CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# APP_BASE_URL = 'http://localhost'
+APP_HTTP_PROTOCOL = 'http'
+APP_HOST_NAME = 'localhost'
+APP_HTTP_PORT = 8080
+APP_BASE_URL = '${APP_HTTP_PROTOCOL}://${APP_HOST_NAME}:${APP_HTTP_PORT}'
 # APP_FORCE_GLOBAL_SECURE_REQ = false
 # APP_SESSION_DRIVER = 'CodeIgniter\Session\Handlers\FileHandler'
 # APP_SESSION_COOKIE_NAME = 'ci_session'
@@ -35,34 +26,39 @@
 # DATABASE
 #--------------------------------------------------------------------
 
+DEFAULT_DATABASE_GROUP = default
 # Postgres Main Database
-# DATABASE_HOSTNAME = postgres
-# DATABASE_NAME = ci4
- # DATABASE_SCHEMA =
-# DATABASE_USERNAME = larry
-# DATABASE_PASSWORD = larry
-# DATABASE_DRIVER = Postgre
-# DATABASE_PORT = 5432
- # DATABASE_PREFIX =
-
-# MySQL Legacy Database
-#  LEGACY_DATABASE_HOSTNAME = mysql
-#  LEGACY_DATABASE_NAME = ci4
-#  LEGACY_DATABASE_ROOT_PASSWORD = root
-#  LEGACY_DATABASE_USERNAME = larry
-#  LEGACY_DATABASE_PASSWORD = larry
-#  LEGACY_DATABASE_DRIVER = MySQLi
-#  LEGACY_DATABASE_PORT = 3306
+DATABASE_HOSTNAME = main-db
+DATABASE_NAME = raptor
+# DATABASE_SCHEMA =
+DATABASE_USERNAME = admin
+DATABASE_PASSWORD = admin
+DATABASE_DRIVER = Postgre
+DATABASE_PORT = 5432
+HOST_MACHINE_DATABASE_PORT = 54320
+# DATABASE_PREFIX =
 
 # Postgres Test Database
-# TEST_DATABASE_HOSTNAME = testdb
-# TEST_DATABASE_NAME = ci4_test
- # TEST_DATABASE_SCHEMA =
-# TEST_DATABASE_USERNAME = larry
-# TEST_DATABASE_PASSWORD = larry
-# TEST_DATABASE_DRIVER = Postgre
-# TEST_DATABASE_PORT = 5432
+TEST_DATABASE_HOSTNAME = host.docker.internal
+TEST_DATABASE_NAME = raptor_test
+# TEST_DATABASE_SCHEMA =
+TEST_DATABASE_USERNAME = admin
+TEST_DATABASE_PASSWORD = admin
+TEST_DATABASE_DRIVER = Postgre
+TEST_DATABASE_PORT = 5432
+HOST_MACHINE_TEST_DATABASE_PORT = 54321
 # TEST_DATABASE_PREFIX =
+
+# MySQL Legacy Database
+LEGACY_DATABASE_HOSTNAME = legacy-db
+LEGACY_DATABASE_NAME = raptor
+LEGACY_DATABASE_ROOT_USERNAME = root
+LEGACY_DATABASE_ROOT_PASSWORD = root
+LEGACY_DATABASE_USERNAME = admin
+LEGACY_DATABASE_PASSWORD = admin
+LEGACY_DATABASE_DRIVER = MySQLi
+LEGACY_DATABASE_PORT = 3306
+HOST_MACHINE_LEGACY_DATABASE_PORT = 33060
 
 #--------------------------------------------------------------------
 # CONTENT SECURITY POLICY (CSP)
@@ -102,12 +98,13 @@
 
 #--------------------------------------------------------------------
 # ENCRYPTION
+# https://randomkeygen.com
 #--------------------------------------------------------------------
 
-# ENCRYPT_KEY =
-# ENCRYPT_DRIVER = OpenSSL
-# ENCRYPT_BLOCK_SIZE = 16
-# ENCRYPT_DIGEST = SHA512
+ENCRYPT_KEY = 9PPYlfU6EMIpHMW8i4af2XAiVmSliPYS
+ENCRYPT_DRIVER = OpenSSL
+ENCRYPT_BLOCK_SIZE = 16
+ENCRYPT_DIGEST = SHA512
 
 #--------------------------------------------------------------------
 # HONEYPOT
@@ -137,10 +134,24 @@
 # LOGGER
 #--------------------------------------------------------------------
 
-# LOGGER_THRESHOLD = 4
+LOGGER_THRESHOLD = 9
 
 #--------------------------------------------------------------------
 # CURLRequest
 #--------------------------------------------------------------------
 
 # CURL_REQ_SHARE_OPTIONS = true
+
+#--------------------------------------------------------------------
+# Redis
+#--------------------------------------------------------------------
+
+REDIS_PORT = 6379
+HOST_MACHINE_REDIS_PORT = 63790
+REDIS_HOST = cache-db
+
+#--------------------------------------------------------------------
+# TNT Search
+#--------------------------------------------------------------------
+SEARCH_INDEX_DB_DRIVER = pgsql
+SEARCH_INDEX_STORAGE_PATH = /var/www/html/writable/db/index

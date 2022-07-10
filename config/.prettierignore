@@ -1,0 +1,15 @@
+*.html
+package-lock.json
+.next
+node_modules
+.husky
+build
+docker
+docs
+public
+release
+tests
+vendor
+writable
+app/Assets/scripts/utils/unmaintained
+app/Assets/styles/utils/unmaintained

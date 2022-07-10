@@ -62,6 +62,8 @@ writable/uploads/*
 
 writable/debugbar/*
 
+writable/.php-cs-fixer.cache
+
 php_errors.log
 
 #-------------------------
@@ -81,9 +83,10 @@ tests/coverage*
 phpunit
 
 #-------------------------
-# Composer
+# Dependencies
 #-------------------------
 vendor/
+node_modules/
 
 #-------------------------
 # IDE / Development Files
@@ -121,11 +124,23 @@ nb-configuration.xml
 # Visual Studio Code
 .vscode/
 
-# Docker
-.docker.env
-
-
 /results/
 /phpunit*.xml
 /.phpunit.*.cache
+
+# Others
+.php-cs-fixer.cache
+.docker.env
+.churn.cache
+auth.json
+docker/id_rsa
+docker/gitconfig
+identifier.sqlite
+
+# Webpack
+/public/scripts/
+/public/styles/
+/public/images/
+/app/Database/Seeds/legacyDB.sql
+/app/Database/Seeds/mainDB.sql
 

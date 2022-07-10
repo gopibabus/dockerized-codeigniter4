@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="4.22.0@fc2c6ab4d5fa5d644d8617089f012f3bb84b8703">
+  <file src="app/Config/App.php">
+    <InvalidPropertyAssignmentValue occurrences="2">
+      <code>getenv('APP_SESSION_EXPIRATION')</code>
+      <code>getenv('APP_SESSION_TIME_TO_UPDATE')</code>
+    </InvalidPropertyAssignmentValue>
+    <PossiblyFalsePropertyAssignmentValue occurrences="4">
+      <code>getenv('APP_BASE_URL')</code>
+      <code>getenv('APP_SESSION_COOKIE_NAME')</code>
+      <code>getenv('APP_SESSION_DRIVER')</code>
+      <code>getenv('APP_SESSION_SAVE_PATH')</code>
+    </PossiblyFalsePropertyAssignmentValue>
+    <PossiblyInvalidPropertyAssignmentValue occurrences="4">
+      <code>getenv('APP_CSP_ENABLED')</code>
+      <code>getenv('APP_FORCE_GLOBAL_SECURE_REQ')</code>
+      <code>getenv('APP_SESSION_MATH_IP')</code>
+      <code>getenv('APP_SESSION_REGENERATE_DESTROY')</code>
+    </PossiblyInvalidPropertyAssignmentValue>
+    <UndefinedConstant occurrences="1">
+      <code>WRITEPATH</code>
+    </UndefinedConstant>
+  </file>
+  <file src="app/Config/Autoload.php">
+    <MixedPropertyTypeCoercion occurrences="1"/>
+    <UndefinedConstant occurrences="3">
+      <code>APPPATH</code>
+      <code>APPPATH</code>
+      <code>APP_NAMESPACE</code>
+    </UndefinedConstant>
+  </file>
+  <file src="app/Config/CURLRequest.php">
+    <PossiblyInvalidPropertyAssignmentValue occurrences="1">
+      <code>getenv('CURL_REQ_SHARE_OPTIONS')</code>
+    </PossiblyInvalidPropertyAssignmentValue>
+  </file>
+  <file src="app/Config/Cache.php">
+    <UndefinedConstant occurrences="2">
+      <code>WRITEPATH</code>
+      <code>WRITEPATH</code>
+    </UndefinedConstant>
+  </file>
+  <file src="app/Config/ContentSecurityPolicy.php">
+    <PossiblyFalsePropertyAssignmentValue occurrences="16">
+      <code>getenv('CSP_BASE_URI')</code>
+      <code>getenv('CSP_CHILD_SRC')</code>
+      <code>getenv('CSP_CONNECT_SRC')</code>
+      <code>getenv('CSP_DEFAULT_SRC')</code>
+      <code>getenv('CSP_FONT_SRC')</code>
+      <code>getenv('CSP_FORM_ACTION')</code>
+      <code>getenv('CSP_FRAME_ANCESTORS')</code>
+      <code>getenv('CSP_FRAME_SRC')</code>
+      <code>getenv('CSP_IMAGE_SRC')</code>
+      <code>getenv('CSP_MEDIA_SRC')</code>
+      <code>getenv('CSP_OBJECT_SRC')</code>
+      <code>getenv('CSP_PLUGIN_TYPES')</code>
+      <code>getenv('CSP_REPORT_URI')</code>
+      <code>getenv('CSP_SANDBOX')</code>
+      <code>getenv('CSP_SCRIPT_SRC')</code>
+      <code>getenv('CSP_STYLE_SRC')</code>
+    </PossiblyFalsePropertyAssignmentValue>
+    <PossiblyInvalidPropertyAssignmentValue occurrences="2">
+      <code>getenv('CSP_REPORT_ONLY')</code>
+      <code>getenv('CSP_UPGRADE_INSECURE_REQUESTS')</code>
+    </PossiblyInvalidPropertyAssignmentValue>
+    <PropertyNotSetInConstructor occurrences="1">
+      <code>$fontSrc</code>
+    </PropertyNotSetInConstructor>
+  </file>
+  <file src="app/Config/Cookie.php">
+    <PossiblyFalsePropertyAssignmentValue occurrences="5">
+      <code>getenv('COOKIE_DOMAIN')</code>
+      <code>getenv('COOKIE_EXPIRES')</code>
+      <code>getenv('COOKIE_PATH')</code>
+      <code>getenv('COOKIE_PREFIX')</code>
+      <code>getenv('COOKIE_SAME_SITE')</code>
+    </PossiblyFalsePropertyAssignmentValue>
+    <PossiblyInvalidPropertyAssignmentValue occurrences="3">
+      <code>getenv('COOKIE_HTTP_ONLY')</code>
+      <code>getenv('COOKIE_RAW')</code>
+      <code>getenv('COOKIE_SECURE')</code>
+    </PossiblyInvalidPropertyAssignmentValue>
+  </file>
+  <file src="app/Config/Database.php">
+    <UndefinedConstant occurrences="4">
+      <code>APPPATH</code>
+      <code>ENVIRONMENT</code>
+      <code>ENVIRONMENT</code>
+      <code>ENVIRONMENT</code>
+    </UndefinedConstant>
+  </file>
+  <file src="app/Config/Email.php">
+    <PropertyNotSetInConstructor occurrences="6">
+      <code>$SMTPHost</code>
+      <code>$SMTPPass</code>
+      <code>$SMTPUser</code>
+      <code>$fromEmail</code>
+      <code>$fromName</code>
+      <code>$recipients</code>
+    </PropertyNotSetInConstructor>
+  </file>
+  <file src="app/Config/Events.php">
+    <UndefinedConstant occurrences="2">
+      <code>CI_DEBUG</code>
+      <code>ENVIRONMENT</code>
+    </UndefinedConstant>
+  </file>
+  <file src="app/Config/Exceptions.php">
+    <UndefinedConstant occurrences="1">
+      <code>APPPATH</code>
+    </UndefinedConstant>
+  </file>
+  <file src="app/Config/Honeypot.php">
+    <PossiblyFalsePropertyAssignmentValue occurrences="4">
+      <code>getenv('HONEYPOT_CONTAINER')</code>
+      <code>getenv('HONEYPOT_LABEL')</code>
+      <code>getenv('HONEYPOT_NAME')</code>
+      <code>getenv('HONEYPOT_TEMPLATE')</code>
+    </PossiblyFalsePropertyAssignmentValue>
+    <PossiblyInvalidPropertyAssignmentValue occurrences="1">
+      <code>getenv('HONEYPOT_HIDDEN')</code>
+    </PossiblyInvalidPropertyAssignmentValue>
+  </file>
+  <file src="app/Config/Kint.php">
+    <MissingPropertyType occurrences="4">
+      <code>$plugins</code>
+      <code>$richObjectPlugins</code>
+      <code>$richSort</code>
+      <code>$richTabPlugins</code>
+    </MissingPropertyType>
+  </file>
+  <file src="app/Config/Logger.php">
+    <InvalidPropertyAssignmentValue occurrences="1">
+      <code>getenv('LOGGER_THRESHOLD')</code>
+    </InvalidPropertyAssignmentValue>
+  </file>
+  <file src="app/Config/Mimes.php">
+    <MixedArgument occurrences="1">
+      <code>is_string(static::$mimes[$proposedExtension]) ? [static::$mimes[$proposedExtension]] : static::$mimes[$proposedExtension]</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="1">
+      <code>$types</code>
+    </MixedAssignment>
+    <MixedInferredReturnType occurrences="1">
+      <code>string|null</code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement occurrences="1">
+      <code>is_array(static::$mimes[$extension]) ? static::$mimes[$extension][0] : static::$mimes[$extension]</code>
+    </MixedReturnStatement>
+    <MixedReturnTypeCoercion occurrences="2">
+      <code>$ext</code>
+      <code>string|null</code>
+    </MixedReturnTypeCoercion>
+  </file>
+  <file src="app/Config/Modules.php">
+    <NonInvariantDocblockPropertyType occurrences="1">
+      <code>$aliases</code>
+    </NonInvariantDocblockPropertyType>
+  </file>
+  <file src="app/Config/Publisher.php">
+    <MixedPropertyTypeCoercion occurrences="1"/>
+    <UndefinedConstant occurrences="2">
+      <code>FCPATH</code>
+      <code>ROOTPATH</code>
+    </UndefinedConstant>
+  </file>
+  <file src="app/Config/Routes.php">
+    <UndefinedConstant occurrences="8">
+      <code>APPPATH</code>
+      <code>APPPATH</code>
+      <code>APPPATH</code>
+      <code>APPPATH</code>
+      <code>ENVIRONMENT</code>
+      <code>ENVIRONMENT</code>
+      <code>SYSTEMPATH</code>
+      <code>SYSTEMPATH</code>
+    </UndefinedConstant>
+    <UnresolvableInclude occurrences="3">
+      <code>require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'</code>
+      <code>require APPPATH . 'Routes/Routes.php'</code>
+      <code>require SYSTEMPATH . 'Config/Routes.php'</code>
+    </UnresolvableInclude>
+  </file>
+  <file src="app/Config/Security.php">
+    <DeprecatedProperty occurrences="1">
+      <code>$this-&gt;samesite</code>
+    </DeprecatedProperty>
+    <InvalidPropertyAssignmentValue occurrences="1">
+      <code>getenv('SECURITY_EXPIRES')</code>
+    </InvalidPropertyAssignmentValue>
+    <PossiblyFalsePropertyAssignmentValue occurrences="5">
+      <code>getenv('SECURITY_COOKIE_NAME')</code>
+      <code>getenv('SECURITY_CSRF_PROTECTION')</code>
+      <code>getenv('SECURITY_HEADER_NAME')</code>
+      <code>getenv('SECURITY_SAME_SITE')</code>
+      <code>getenv('SECURITY_TOKEN_NAME')</code>
+    </PossiblyFalsePropertyAssignmentValue>
+    <PossiblyInvalidPropertyAssignmentValue occurrences="3">
+      <code>getenv('SECURITY_REDIRECT')</code>
+      <code>getenv('SECURITY_REGENERATE')</code>
+      <code>getenv('SECURITY_TOKEN_RANDOMIZE')</code>
+    </PossiblyInvalidPropertyAssignmentValue>
+  </file>
+  <file src="app/Config/Toolbar.php">
+    <UndefinedConstant occurrences="1">
+      <code>SYSTEMPATH</code>
+    </UndefinedConstant>
+  </file>
+  <file src="app/Config/View.php">
+    <NonInvariantDocblockPropertyType occurrences="2">
+      <code>$filters</code>
+      <code>$plugins</code>
+    </NonInvariantDocblockPropertyType>
+  </file>
+  <file src="app/Controllers/BaseController.php">
+    <MissingConstructor occurrences="5">
+      <code>$request</code>
+      <code>$request</code>
+      <code>$request</code>
+      <code>$request</code>
+      <code>$request</code>
+    </MissingConstructor>
+    <NonInvariantDocblockPropertyType occurrences="1">
+      <code>$request</code>
+    </NonInvariantDocblockPropertyType>
+  </file>
+  <file src="app/Exceptions/PreConditionFailureException.php">
+    <MissingParamType occurrences="2">
+      <code>$code</code>
+      <code>$message</code>
+    </MissingParamType>
+    <MixedArgument occurrences="2">
+      <code>$code</code>
+      <code>$message</code>
+    </MixedArgument>
+  </file>
+</files>

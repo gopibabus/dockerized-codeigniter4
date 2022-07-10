@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<psalm
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://getpsalm.org/schema/config"
+        xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+        errorLevel="1"
+        resolveFromConfigFile="true"
+        strictBinaryOperands="true"
+        checkForThrowsDocblock="true"
+        findUnusedPsalmSuppress="true"
+        ensureArrayStringOffsetsExist="true"
+        ensureArrayIntOffsetsExist="true"
+        runTaintAnalysis="true"
+        errorBaseline="known-issues.xml"
+        autoloader="psalm_autoload.php"
+        cacheDirectory="writable/cache/psalm"
+>
+    <projectFiles>
+        <directory name="../app" />
+        <ignoreFiles>
+            <directory name="../app/Assets" />
+            <directory name="../docker" />
+            <directory name="../docs" />
+            <directory name="../node_modules" />
+            <directory name="../release" />
+            <directory name="../vendor" />
+            <directory name="../writable" />
+            <directory name="../app/Views" />
+            <directory name="../app/Database/StoredProcs" />
+        </ignoreFiles>
+    </projectFiles>
+    <extraFiles>
+        <directory name="../public" />
+    </extraFiles>
+    <issueHandlers>
+        <PropertyNotSetInConstructor>
+            <errorLevel type="suppress">
+                <directory name="../app/Database/Seeds"/>
+                <directory name="../app/Models"/>
+                <directory name="../app/Controllers"/>
+            </errorLevel>
+        </PropertyNotSetInConstructor>
+        <PossiblyFalsePropertyAssignmentValue>
+            <errorLevel type="suppress">
+                <file name="../app/Config/Database.php"/>
+            </errorLevel>
+        </PossiblyFalsePropertyAssignmentValue>
+    </issueHandlers>
+    <plugins>
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+    </plugins>
+</psalm>

@@ -1,17 +1,39 @@
 {
-    "name": "codeigniter4/appstarter",
+    "name": "st_deap/raptor",
     "type": "project",
-    "description": "CodeIgniter4 starter app",
-    "homepage": "https://codeigniter.com",
+    "description": "Raptor Admin Web App",
+    "homepage": "https://raptoradmin.web.att.com",
     "license": "MIT",
     "require": {
-        "php": "^7.3 || ^8.0",
-        "codeigniter4/framework": "^4"
+        "php": "^8.0",
+        "ext-curl": "*",
+        "ext-intl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-pdo_pgsql": "*",
+        "ext-pgsql": "*",
+        "ext-redis": "*",
+        "ext-xml": "*",
+        "codeigniter4/framework": "^4",
+        "doctrine/collections": "^1.6",
+        "league/climate": "^3.8",
+        "predis/predis": "^1.1",
+        "spatie/ignition": "^1.3",
+        "teamtnt/tntsearch": "^2.9",
+        "zircote/swagger-php": "^4.4"
     },
     "require-dev": {
+        "ext-xdebug": "*",
+        "bmitch/churn-php": "^1.7",
+        "codeigniter/coding-standard": "^1.4",
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
-        "phpunit/phpunit": "^9.1"
+        "nette/php-generator": "^4.0",
+        "nunomaduro/collision": "^6.1",
+        "php-standard-library/psalm-plugin": "^1.1",
+        "phpunit/phpunit": "^9.1",
+        "psalm/plugin-phpunit": "^0.16.1",
+        "vimeo/psalm": "^4.22"
     },
     "suggest": {
         "ext-fileinfo": "Improves mime type detection for files"
@@ -19,23 +41,66 @@
     "autoload": {
         "psr-4": {
             "App\\": "app",
-            "Config\\": "app/Config"
+            "Config\\": "app/Config",
+            "Tests\\Unit\\": "tests/unit/app"
         },
         "exclude-from-classmap": [
-            "**/Database/Migrations/**"
+            "**/Database/Migrations/**",
+            "**/Database/StoredProcs/**"
         ]
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Support\\": "tests/_support"
+            "Tests\\Unit\\": "tests/unit"
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "lint:check": "vendor/bin/psalm --config=config/psalm.xml --diff",
+        "lint:clear-cache": "vendor/bin/psalm --clear-cache",
+        "style:check": "vendor/bin/php-cs-fixer fix --dry-run --diff --config=config/.php-cs-fixer.dist.php",
+        "style:fix": "vendor/bin/php-cs-fixer fix --show-progress=estimating --config=config/.php-cs-fixer.dist.php",
+        "refactor:check": "vendor/bin/churn run --configuration=config/churn.yml.dist",
+        "swagger:generate": "vendor/bin/openapi -o public/openapi.yaml --bootstrap config/swagger-conf.php ./app/Controllers/Api",
+        "tests:unit": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpunit --configuration config/phpunit.xml.dist --testsuite Unit"
+        ],
+        "tests:integration": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpunit --configuration config/phpunit.xml.dist --testsuite Integration"
+        ],
+        "tests:report": "npm run open:php-test-coverage-report",
+        "auto-scripts": [
+            "npm install"
+        ],
+        "post-install-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "scripts-descriptions": {
+        "tests:unit": "Will run PHP Unit test cases",
+        "tests:integration": "Will run PHP Integration test cases",
+        "tests:report": "Open test report in the browser",
+        "lint:check": "Will run static analysis on PHP code",
+        "lint:clear-cache": "Clear psalm cache",
+        "style:check": "Will check PHP coding styles",
+        "style:fix": "Will fix PHP coding styles",
+        "refactor:check": "Identify PHP files that needed rafactoring",
+        "swagger:generate": "Generate Swagger File"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": false
+        }
     },
     "support": {
-        "forum": "http://forum.codeigniter.com/",
-        "source": "https://github.com/codeigniter4/CodeIgniter4",
-        "slack": "https://codeigniterchat.slack.com"
-    }
+        "contact": "Raymond Agnes <ra1891@att.com>",
+        "source": "https://codecloud.web.att.com/scm/st_deap/raptor.git",
+        "frameworkCommunity": "https://codeigniterchat.slack.com",
+        "frameworkForum": "https://forum.codeigniter.com"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

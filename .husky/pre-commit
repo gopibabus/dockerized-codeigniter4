@@ -1,0 +1,81 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo " ";
+echo " ";
+echo "============================================================================";
+echo " 🗃 Stashing unStaged changes....."
+echo "============================================================================";
+echo " ";
+echo " ";
+find . -name '.DS_Store' -type f -delete
+git stash clear
+git stash -k -u
+
+echo " ";
+echo " ";
+echo "============================================================================";
+echo " 🤞 Checking git commit message..."
+echo "============================================================================";
+echo " ";
+echo " ";
+
+npx commitlint --edit $1 --config config/.commitlintrc.json
+
+echo " ";
+echo " ";
+echo "============================================================================";
+echo " ✅ Perfect commit message. Thanks for giving meaningful name to your commit"
+echo "============================================================================";
+echo " ";
+echo " ";
+
+echo " ";
+echo " ";
+echo "============================================================================";
+echo " 🚀 Generating Swagger Config file..."
+echo "============================================================================";
+echo " ";
+echo " ";
+
+composer run swagger:generate
+
+echo " ";
+echo " ";
+echo "============================================================================";
+echo " ✨ Formatting Javascript and CSS Files....."
+echo "============================================================================";
+echo " ";
+echo " ";
+
+npm run style:fix
+
+echo " ";
+echo " ";
+echo "============================================================================";
+echo " ✨ Formatting the PHP code....."
+echo "============================================================================";
+echo " ";
+echo " ";
+
+composer run style:fix
+
+echo " ";
+echo " ";
+echo "============================================================================";
+echo " 🔍 Running Static Analysis on PHP code....."
+echo "============================================================================";
+echo " ";
+echo " ";
+
+#TODO: fix psalm and activate
+#composer run lint:check
+git add .
+
+echo " ";
+echo " ";
+echo "============================================================================";
+echo " 👍 Done analyzing and formatting the code ✅."
+echo "============================================================================";
+echo " ";
+echo " ";

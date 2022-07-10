@@ -7,21 +7,10 @@ role=${CONTAINER_ROLE:-app}
 
 echo "The environment is $env"
 
-if [ "$env" != "local" ]; then
-
-    echo "Cache Configuration Info"
-    (
-        cd /var/www/html &&
-        php spark cache:info
-    )
-
-    # echo "Removing XDebug"
-    # rm -rf /usr/local/etc/php/conf.d/{docker-php-ext-xdebug.ini, xdebug.ini}
-fi
-
 if [ "$role" = "app" ]; then
-    exec apache2-foreground
+    echo "Container role \"$role\""
 else
-    echo "Could not match the container role \"$role\""
-    exit 1
+    echo "Container role \"$role\""
 fi
+
+exec apache2-foreground
