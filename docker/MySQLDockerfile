@@ -1,0 +1,13 @@
+FROM mysql:5.7-debian
+
+# environment variables and arguments
+
+# TODO: Move proxy variables in to docker-compose.yml file
+# ENV https_proxy http://proxy.conexus.svc.local:3128
+# ENV http_proxy http://proxy.conexus.svc.local:3128
+
+RUN apt-get -yqq update && apt-get install -yqq pv
+
+COPY writable/db /var/db
+COPY docker/helpers/db/db_import.sh /var/db/db_import.sh
+RUN chmod +x /var/db/db_import.sh
